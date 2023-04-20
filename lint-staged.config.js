@@ -8,6 +8,7 @@ const buildEslintCommand = filenames =>
 
 module.exports = {
   '*.{js,jsx,ts,tsx}': [buildEslintCommand],
+  '**/*.(ts|tsx)': () => 'yarn tsc --noEmit',
   // yarn prettier --config ./.prettier.config.js -w ${filenames.join(' ')}
   '*.{js,jsx,ts,tsx,css,md,json}': filenames =>
     `yarn prettier --config ./.prettier.config.js -w "${filenames.join('" "')}"`
