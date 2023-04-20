@@ -6,3 +6,11 @@ if [ -t 2 ]; then
 fi
 
 yarn lint-staged
+
+# Perintah tersebut adalah sebuah shell script yang menguji apakah file descriptor nomor 2 (stderr) ditujukan ke terminal (tty). Jika ya, maka perintah "exec >/dev/tty 2>&1" akan menyalurkan output standar (stdout) dan error (stderr) ke terminal.
+
+# Dalam bahasa Indonesia, perintah tersebut dapat dijelaskan sebagai berikut:
+
+# "Jika file descriptor nomor 2 (stderr) ditujukan ke terminal (tty), maka alirkan output standar (stdout) dan error (stderr) ke terminal." 
+
+# Perintah tersebut digunakan untuk menampilkan pesan error atau kesalahan pada terminal saat menjalankan sebuah program atau script sehingga mudah untuk dilihat dan dianalisis oleh pengguna.
