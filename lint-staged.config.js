@@ -1,15 +1,22 @@
 // eslint-disable-next-line @typescript-eslint/no-var-requires
-const path = require('path');
+const path = require('path')
 
-const buildEslintCommand = filenames =>
+const buildEslintCommand = (filenames) =>
   `next lint --fix --file ${filenames
-    .map(f => path.relative(process.cwd(), f))
-    .join(' --file ')}`;
+    .map((f) => path.relative(process.cwd(), f))
+    .join(' --file ')}`
 
 module.exports = {
   '*.{js,jsx,ts,tsx}': [buildEslintCommand],
-  '**/*.(ts|tsx)': () => 'yarn tsc --noEmit',
-  // yarn prettier --config ./.prettier.config.js -w ${filenames.join(' ')}
-  '*.{js,jsx,ts,tsx,css,md,json}': filenames =>
-    `yarn prettier --config ./.prettier.config.js -w "${filenames.join('" "')}"`
-};
+  // '**/*.(ts|tsx)': () => 'yarn tsc --noEmit',
+  // // yarn prettier --config ./.prettier.config.js -w ${filenames.join(' ')}
+  // '*.{js,jsx,ts,tsx,css,md,json}': (filenames) =>
+  //   `yarn prettier --config ./.prettier.config.js -w "${filenames.join(
+  //     '" "'
+  //   )}"`,
+  // '**/*.{js,jsx,ts,tsx}': [
+  //   'yarn tsc --noEmit',
+  //   'yarn eslint .',
+  //   'yarn prettier --write .',
+  // ],
+}
