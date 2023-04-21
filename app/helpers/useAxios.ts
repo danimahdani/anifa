@@ -9,7 +9,7 @@ const axiosData = async (link: string): Promise<unknown> => {
 }
 
 export const useAxios = (link: string): UseQueryResult<unknown, unknown> => {
-  return useQuery(['fetch data from axios', link], () => axiosData(link), {
+  return useQuery(['fetch data', link], () => axiosData(link), {
     keepPreviousData: true,
     refetchOnWindowFocus: false
   })
