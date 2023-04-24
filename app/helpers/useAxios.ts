@@ -5,7 +5,7 @@ const axiosData = async (link: string): Promise<unknown> => {
   const response: AxiosResponse = await axios.get(`https://api.jikan.moe/v4${link}`)
   const { data } = response
 
-  return data
+  return data.data
 }
 
 export const useAxios = (link: string): UseQueryResult<unknown, unknown> => {

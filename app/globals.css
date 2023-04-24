@@ -3,25 +3,105 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --swiper-navigation-color: #e49a38;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+.swiper-button-prev,
+.swiper-button-next {
+  font-size: 30px;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  position: absolute;
+  top: 50%;
+  width: calc(var(--swiper-navigation-size) / 44 * 27);
+  height: var(--swiper-navigation-size);
+  margin-top: calc(0px - (var(--swiper-navigation-size) / 2));
+  z-index: 10;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--swiper-navigation-color, var(--swiper-theme-color));
+}
+
+.swiper-button-prev:before,
+.swiper-button-next:before {
+  content: '';
+  width: 50px;
+  height: 60px;
+  position: absolute;
+  z-index: -1;
+  background-color: rgba(0, 0, 0, 0.45);
+}
+
+.swiper-button-prev:before {
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+
+.swiper-button-next:before {
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
+
+.swiper-button-prev {
+  left: 5px;
+}
+
+.swiper-button-next {
+  right: 5px;
+}
+
+.flash-button {
+  position: relative;
+  overflow: hidden;
+  border: none;
+  background-color: #0099cc;
+  color: #fff;
+  font-size: 1.2em;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.flash-button:before,
+.flash-button:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: skew(-20deg);
+  transition: all 0.3s ease-in-out;
+}
+
+.flash-button:before {
+  left: -200%;
+}
+
+.flash-button:before,
+.flash-button:after {
+  left: 0;
+}
+
+.flash-button:before {
+  animation: flash 0.8s linear infinite;
+}
+
+@keyframes flash {
+  0% {
+    transform: skew(-20deg) translateX(-200%);
+    opacity: 0;
   }
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  50% {
+    transform: skew(-20deg) translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: skew(-20deg) translateX(200%);
+    opacity: 0;
+  }
 }
