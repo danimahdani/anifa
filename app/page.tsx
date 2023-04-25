@@ -1,9 +1,13 @@
-import Layout from './components/Layout'
+import CarouselAnime from "./components/parts/CarouselAnime"
+// import AnimePopular from "./components/anime-popular";
 
 export default async function Home() {
   return (
-    <section className='max-w-7xl mx-auto p-10'>
-      <Layout />
-    </section>
+    <div className=''>
+      {/* <AnimePopular /> */}
+      <section className='px-5 py-10 lg:px-24 mx-auto'>
+        <CarouselAnime />
+      </section>
+    </div>
   )
 }
