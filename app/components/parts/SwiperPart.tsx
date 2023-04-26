@@ -7,7 +7,7 @@ import "swiper/css/navigation"
 import "swiper/css/pagination"
 import "swiper/css/scrollbar"
 import { useAxios } from "@/app/helpers/useAxios"
-import { Anime } from "@/app/types/types"
+import { Anime } from "@/app/intefaces"
 import Card from "./card"
 
 const SwiperPart = ({ type }: { type: string }) => {

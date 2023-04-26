@@ -24,7 +24,7 @@ export interface AnimeType {
   year: number
 }
 
-export interface Gendre {
+export interface GenreColorized {
   mal_id: number
   name: string
   url: string

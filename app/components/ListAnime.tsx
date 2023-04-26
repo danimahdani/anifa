@@ -2,7 +2,7 @@
 import { useQuery } from "@tanstack/react-query"
 import React, { memo, useState } from "react"
 import Loading from "../loading"
-import { AnimeTypeCompleted } from "../types/types"
+import { AnimeTypeCompleted } from "../intefaces"
 import ErrorPage from "../error_page"
 import Image from "next/image"
 import { AiFillStar } from "react-icons/ai"
@@ -52,7 +52,7 @@ const ListAnime = ({ filter }: { filter: string }) => {
               </div>
               <div className='flex gap-2 flex-wrap'>
                 {e.genres.map((e) => (
-                  <ColorizedGendre key={e.mal_id} gendreId={e.mal_id} />
+                  <ColorizedGendre key={e.mal_id} genreId={e.mal_id} />
                 ))}
               </div>
             </div>

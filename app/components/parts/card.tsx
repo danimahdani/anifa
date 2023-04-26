@@ -1,7 +1,7 @@
 import Image from "next/image"
 import clsx from "clsx"
 import React from "react"
-import { AnimeType } from "../../types/types"
+import { AnimeType } from "../../intefaces"
 
 const Card = ({ title, title_english, image, year }: AnimeType) => {
   return (

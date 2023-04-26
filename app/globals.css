@@ -6,6 +6,10 @@
   --swiper-navigation-color: #e49a38;
 }
 
+.bg-black-linear {
+  background: linear-gradient(100deg, rgba(0, 0, 0, 1) 40%, rgba(255, 255, 255, 0) 100%);
+}
+
 .swiper-button-prev,
 .swiper-button-next {
   font-size: 30px;
@@ -28,7 +32,7 @@
 
 .swiper-button-prev:before,
 .swiper-button-next:before {
-  content: '';
+  content: "";
   width: 50px;
   height: 60px;
   position: absolute;
@@ -67,7 +71,7 @@
 
 .flash-button:before,
 .flash-button:after {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: -100%;

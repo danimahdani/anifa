@@ -1,9 +1,9 @@
-import { Gendre } from "@/app/types/types"
+import { GenreColorized } from "@/app/intefaces"
 import clsx from "clsx"
 import React from "react"
 
-const ColorizedGendre = ({ gendreId }: { gendreId: number }) => {
-  const allGendres: Gendre[] = [
+const ColorizedGendre = ({ genreId }: { genreId: number }) => {
+  const allGendres: GenreColorized[] = [
     {
       mal_id: 1,
       name: "Action",
@@ -561,8 +561,8 @@ const ColorizedGendre = ({ gendreId }: { gendreId: number }) => {
   return (
     <>
       {allGendres.map(
-        (e) =>
-          e.mal_id == gendreId && (
+        (e: GenreColorized) =>
+          e.mal_id == genreId && (
             <span key={e.mal_id} className={clsx("px-2 py-1 rounded-md font-semibold", e.colorText, e.color)}>
               {e.name}
             </span>
