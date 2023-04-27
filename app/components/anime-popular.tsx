@@ -28,7 +28,7 @@ const AnimePopular = () => {
         (e: AnimeTypeCompleted) =>
           e.trailer.images.maximum_image_url && (
             <SwiperSlide key={e.mal_id}>
-              <div className='mb-20'>
+              <div className='mb-3'>
                 {/* <div className='h-14 w-full bg-rose-600/50 absolute z-10'></div> */}
                 <div className='flex w-full relative'>
                   <div className='bg-black-linear text-white absolute inset-0 p-10 overflow-hidden'>
@@ -52,6 +52,7 @@ const AnimePopular = () => {
                     height={1500}
                     src={e.trailer.images.maximum_image_url ?? ""}
                     alt='Popular Anime'
+                    priority
                   />
                 </div>
               </div>
