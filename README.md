@@ -18,10 +18,10 @@ This app is an implementation of React with Supabase, simply have Authentication
 
 ### Todos
 
-- [] Signin
-- [] Signup
-- [] Signout
-- [] Integrated Database
+- [ ] Signin
+- [ ] Signup
+- [ ] Signout
+- [ ] Integrated Database
 
 ## Develop on your local machine
 
